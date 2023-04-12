@@ -18,26 +18,26 @@
             <div>
                 <input type="button" value="AC" onclick="display.value = '' ">
                 <input type="button" value="DE" onclick="display.value = display.value.toString().slice(0,-1)">
-                <input type="button" class="operator" value="." onclick="display.value += value">
-                <input type="button" class="operator" value="/" onclick="display.value += value">
+                <input type="button" class="operator op1" value=".">
+                <input type="button" class="operator op1" value="/">
             </div>
             <div>
                 <input type="button" value="7" onclick="display.value += value">
                 <input type="button" value="8" onclick="display.value += value">
                 <input type="button" value="9" onclick="display.value += value">
-                <input type="button" class="operator" value="*" onclick="display.value += value">
+                <input type="button" class="operator op1" value="*">
             </div>
             <div>
                 <input type="button" value="4" onclick="display.value += value">
                 <input type="button" value="5" onclick="display.value += value">
                 <input type="button" value="6" onclick="display.value += value">
-                <input type="button" class="operator" value="-" onclick="display.value += value">
+                <input type="button" class="operator op2" value="-">
             </div>
             <div>
                 <input type="button" value="1" onclick="display.value += value">
                 <input type="button" value="2" onclick="display.value += value">
                 <input type="button" value="3" onclick="display.value += value">
-                <input type="button" class="operator" value="+" onclick="display.value += value">
+                <input type="button" class="operator op2" value="+">
             </div>
             <div class="colum-3">
                 <input class="zero" type="button" value="00">
@@ -49,10 +49,39 @@
     <script>
         let zeroNumber = document.querySelectorAll('.zero');
         const result = document.querySelector('.displayResult');
+        const operator1 = document.querySelectorAll('.op1');
+        const operator2 = document.querySelectorAll('.op2');
+
+
+        operator1.forEach(function (el) {
+            el.addEventListener('click', function () {
+                let arrDisplay = result.value.split('');
+                let lastOfArr = arrDisplay.length - 1;
+                let lastCharacter = arrDisplay[lastOfArr];
+                if (lastCharacter == '.' || lastCharacter == '/' || lastCharacter == '*' || lastCharacter == '+' || lastCharacter == '-') {
+                    result.value += '';
+                } else {
+                    result.value += el.value;
+                }
+            });
+        });
+
+        operator2.forEach(function (el) {
+            el.addEventListener('click', function () {
+                let arrDisplay = result.value.split('');
+                let lastOfArr = arrDisplay.length - 1;
+                let lastCharacter = arrDisplay[lastOfArr];
+                if (lastCharacter == '.' || lastCharacter == '/' || lastCharacter == '*') {
+                    result.value += '';
+                } else {
+                    result.value += el.value;
+                }
+            });
+
+        });
 
 
 
-        // console.log(zeroNumber[0].value);
 
         zeroNumber.forEach(function (el) {
             el.addEventListener("click", function () {
