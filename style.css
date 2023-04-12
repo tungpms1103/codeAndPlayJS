@@ -1,0 +1,88 @@
+html{
+    font-size: 62.5%;
+}
+*,::after,::before
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{   min-height: 100vh;
+    background-color: #00000085;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container
+{
+    width: 30rem;
+    height: 38rem;
+    background-color: transparent;
+    box-shadow: 0 0 15px #fff;
+    padding: 1rem;
+}
+.container form
+{
+    width: 100%;
+    height: 100%;
+    user-select: none;
+}
+.container form div:not(.colum-3, .display)
+{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+.container form .display
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 20px 0 35px 0;
+    height: 5rem;
+    width:  100%;
+    pointer-events: none;
+    user-select: none;
+}
+form .display input
+{
+    height: 100%;
+    text-align: right;
+    font-size: 2rem;
+    padding: 5px;
+    pointer-events: none;
+    flex: 1;
+}
+form div input:not(.colum-3 input, .display input)
+{
+    flex: 1;
+    height: 3.5rem;
+}
+div input:not(.display input, input.operator)
+{
+    font-weight: 800;
+    font-size: 2rem;
+}
+.colum-3 
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    column-gap: 5px;
+   
+}
+.colum-3 input
+{
+    height: 3.5rem;
+}
+
+input.operator
+{
+    color: aqua;
+    font-size: 2.4rem;
+    font-weight: 900;
+    text-align: center;
+}
