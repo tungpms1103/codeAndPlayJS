@@ -1,0 +1,105 @@
+html{
+    font-size: 62.5%;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: #fff;
+}
+.header
+{
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    align-items: center;
+    z-index: 1000;
+}
+.header>a, .header ul li a
+{
+    text-decoration: none;
+    color: #3a3838;
+    font-size: 3rem;
+    font-weight: 600;
+    user-select: none;
+}
+.header ul
+{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+}
+.header ul li 
+{
+    margin: 0 1.5rem;
+    padding: 1rem 1.5rem;
+    border-radius: 25px;
+}
+.header ul .active, .header ul li:hover
+{
+    background-color: #4848c5;
+}  
+
+.parallax
+{
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+.parallax h2
+{   
+    position: relative;
+    font-size: 4.5rem;
+    /* transform: translate(5rem, -8rem); */
+    user-select: none;
+    top: 12rem;
+    left: 0;
+}
+.parallax img
+{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+}
+.parallax #sun
+{
+    object-fit: contain;
+    width: 20rem;
+    height: 20rem;
+    top: 8rem;
+    left: calc(50% + 20rem);
+    z-index: -1;
+}
+.content
+{
+    padding: 5rem 10rem;
+    background-color: rgb(48, 48, 49);
+    color: #fff;
+    position: relative;
+    z-index: 10;
+}
+
+.content h2
+{
+    font-size: 5rem;
+    font-weight: 600;
+    margin: 1rem 0;
+}
+.content p
+{
+    font-size: 3rem;
+    text-align: justify;
+}

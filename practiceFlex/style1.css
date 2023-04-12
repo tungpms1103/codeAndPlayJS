@@ -1,0 +1,150 @@
+html{
+    font-size: 62.5%;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.header
+{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    gap: 3rem;
+    padding: 2rem 3rem;
+}
+
+.header .logo
+{   
+   flex: 0 0 10rem;
+    max-width: 10rem;
+    user-select: none;
+}
+
+.header .nav
+{
+    font-size: 2.4rem;
+    flex-grow: 1;
+    flex-shrink: 0;
+    /* background-color: aqua; */
+    display: flex;
+    gap: 4rem;
+    user-select: none;
+
+}
+.nav .search
+{
+    flex-grow: 1;
+    display: flex;
+}
+.nav .search .search-input
+{
+   user-select: none;
+    flex-grow: 1;
+    margin: 1px 2rem;
+    padding: 0 10px;
+    box-shadow: 0 0 1rem 1px bisque;
+}
+.register , .sign-in
+{
+    text-decoration: underline;
+    font-style: italic;
+    font-weight: bold;
+}
+
+/* List item */
+
+.list-item
+{
+    display: flex;
+    align-items: center;
+    margin: 2rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+}
+.list-item .card-item
+{
+    
+    flex: 1 1 200px;
+    transition: all .5s linear;
+
+}
+.list-item .card-item img
+{
+    max-width: 100%;
+    width: 100%;
+    height: 25rem;
+    object-fit: cover;
+    /* object-position: 2rem 2rem; */
+    
+}
+.list-item .card-item:hover
+{
+    transform: scale(1.2);
+}
+
+@media screen and (max-width: 700px) {
+    .header .logo
+    {
+        display: none;
+    }
+    .register , .sign-in
+    {
+      font-size: 2rem;
+      transition: all .2s linear;
+    }
+    .register:hover , .sign-in:hover
+    {
+      color: transparent;
+      background-image: linear-gradient(red,#22a422,yellow);
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+}
+
+.test-inline
+{
+    margin: 10rem;
+    background-color: #22a422;
+    min-height: 5rem;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.test-inline span
+{
+    display: inline-block;
+    background-color: aliceblue;
+    width: 15rem;
+    height: 4rem;
+    text-align: center;
+}
+
+
+.text
+{
+    font-size: 2rem;
+    padding: 2rem;
+}
+.text p
+{   
+    text-align: justify;
+    /* word-break: break-all; */
+    word-break: break-word;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    font-weight: 600;
+}
+.text p::first-letter
+{
+    color: transparent;
+    background-image: linear-gradient(to bottom, red,rgb(22, 137, 7),rgb(179, 8, 42));
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 3rem;
+}

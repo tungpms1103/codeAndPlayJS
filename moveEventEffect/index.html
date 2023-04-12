@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Mouse move effect</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <img src="./image/icon2.jpg" alt="bongtuyet">
+    </div>
+
+    <div class="textFadein">
+        <h2>You're welcome</h2>
+    </div>
+
+    <div class="letterFadein">
+        <h2 class="letterfade_in">You're welcome</h2>
+    </div>
+
+    <span class="test1">
+        <span>h</span>
+        <span>h2</span>
+        <span>h3</span>
+        <span>h4</span>
+        <span>h5</span>
+        <span>h6</span>
+        <span>h7</span>
+    </span>
+
+
+    <script>
+        document.addEventListener('mousemove', function (e) {
+            let body = document.querySelector('body');
+
+            let iconEffect = document.createElement('span');
+            iconEffect.classList.add("mouseSpan");
+
+
+            let x = e.offsetX;
+            let y = e.offsetY;
+            iconEffect.style.left = x + 'px';
+            iconEffect.style.top = y + 'px';
+
+            let size = Math.random() * 50;
+            iconEffect.style.width = 20 + size + 'px';
+            iconEffect.style.height = 20 + size + 'px';
+
+            let rotateValue = Math.random() * 360;
+            iconEffect.style.transform = 'rotate(' + rotateValue + 'deg)';
+
+
+            body.appendChild(iconEffect);
+
+            setTimeout(function () {
+                iconEffect.remove();
+            }, 500)
+        });
+
+
+        // fade in text
+
+        const textElement = document.querySelector('.letterfade_in');
+        let letters = textElement.textContent.split('');
+        textElement.textContent = '';
+
+        let positionX = 0;
+        function myLoop() {
+            letters.forEach((letter, index) => {
+                const span = document.createElement('span');
+                span.classList.add('fadeInletter');
+                span.textContent = letter;
+                span.style.opacity = 0;
+                span.style.color = 'transparent';
+                span.style.webkitBackgroundClip = 'text';
+                span.style.backgroundClip = 'text';
+                span.style.backgroundImage = 'linear-gradient(to bottom, rgb(255, 238, 0),rgb(0, 119, 128),rgb(179, 21, 42))';
+
+                span.style.display = 'inline-block';
+                span.style.position = 'relative';
+                span.style.transition = 'all 1s linear';
+
+                span.style.marginLeft = '5px';
+                span.style.textShadow = '5px 5px 5px rgba(100, 140, 0, .3)';
+                textElement.appendChild(span);
+
+                // let widthSpan = parseInt(window.getComputedStyle(span).getPropertyValue('width'));
+
+                let widthSpan = span.offsetWidth;
+                // console.log(widthSpan + 'px');
+
+                if (widthSpan == 0) {
+                    span.style.width = 22.5 + 'px';
+                }
+
+                span.style.transform = 'translateX(' + 900 + 'px)';
+
+            });
+
+
+            let length = textElement.children.length;
+            let index = 0;
+            const fadeInInterval = setInterval(() => {
+                textElement.children[index].style.opacity = 1;
+                textElement.children[index].style.transform = 'translateX(' + 0 + 'px)';
+                index++;
+
+                if (index === letters.length) {
+                    clearInterval(fadeInInterval);
+                    setTimeout(function () {
+                        textElement.textContent = '';
+                    }, length * 100);
+                }
+            }, 100);
+
+
+
+            //  chay tu cuoi den dau
+
+            // let length = textElement.children.length;
+            // let index = textElement.children.length - 1;
+
+            // const fadeInInterval = setInterval(() => {
+            //     textElement.children[index].style.opacity = 1;
+            //     textElement.children[index].style.transform = 'translate(' + 0 + 'px)';
+            //     index--;
+            //     if (index < 0) {
+            //         clearInterval(fadeInInterval);
+            //         setTimeout(function () {
+            //             textElement.textContent = '';
+            //         }, length * 100);
+            //     }
+            // }, 100);
+
+            setTimeout(myLoop, length * 100 + 2000);
+        }
+
+        myLoop();
+
+
+
+
+    </script>
+</body>
+
+</html>

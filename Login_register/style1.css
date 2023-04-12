@@ -1,0 +1,261 @@
+html{
+    font-size: 62.5%;
+}
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('./image/bg3.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    height: 8rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 3rem;
+    padding: 1rem 5rem;
+}
+.header .navigation
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.navigation>a
+{   
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    opacity: .8;
+    user-select: none;
+}
+.navigation .nav_item::first-letter
+{
+    text-transform: uppercase;
+}
+.navigation>a::after
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    border-bottom: 3px solid #fff;
+    transform-origin: left;
+    transition: all .5s ease;
+}
+.navigation>a:hover::after{
+    /* transform-origin: right; */
+    width: 100%;
+}
+.navigation>a:hover
+{
+    opacity: 1;
+}
+.navigation .nav-btn-login
+{  
+    display: block;
+    min-width: 12rem;
+    padding: 1rem;
+    background-color: rgb(29, 54, 51);
+    color: #fff;
+    font-size: 2.4rem;
+    border: 2px solid #fff;
+    border-radius: .5rem;
+    opacity: .8;
+}
+.navigation .btn-login:hover
+{
+    opacity: 1; 
+    user-select: none;
+    cursor: pointer;
+}
+
+/* Login page */
+
+.wraper
+{
+    position: relative;
+    width: 45rem;
+    height: 50rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-direction: column; */
+    user-select: none;
+
+    background-color: transparent;
+    border: 2px solid rgba(255,255,255,0.5);
+    box-shadow: 5px 5px 5px 0 rgba(255,255,255,0.5);
+    border-radius: 15px;
+    backdrop-filter: blur(20px);
+    color: #fff;
+    transform: scale(0);
+    transition: all .3s ease;
+    overflow: hidden;
+}
+.wraper.active
+{
+    transform: scale(1);
+}
+.close-btn
+{  
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 3rem;
+    background-color: #fff;
+    color: #000;
+    border-radius: 0 0 0 15px ;
+}
+.wraper .form-input
+{   
+    position: relative;
+    width: 100%;
+    padding: 2rem 6rem;
+    transition: all .5s ease;
+}
+.wraper .form-input h2
+{
+    font-size: 4rem;
+    position: absolute;
+    top: -3.8rem;
+    left: 0;
+    text-align: center;
+    display: block;
+    width: 100%;
+}
+.wraper .form-input .input_text
+{   
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    padding: 2rem 0;
+    border-bottom: 2px solid #000;
+    margin-bottom: 2rem;
+
+}
+
+.wraper.activeSlide .login-page
+{
+    transform: translateX(-40rem);
+}
+
+.form-input .input_text .icon
+{
+    position: absolute;
+    right: 8px;
+    pointer-events: none;
+    font-size: 2.6rem;
+}
+.form-input .input_text label
+{
+    position: absolute;
+    pointer-events: none;
+    left: 0;
+    transition: .5s;
+    font-size: 2.4rem;
+}
+
+.form-input .input_text input
+{
+    width: 100%;
+    height: 3.5rem;
+    padding: .2rem 4rem .2rem 0;
+    font-size: 2rem;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ffffffba;
+}
+
+.input_text input:valid~label,.input_text input:focus~label
+{
+    transform: translateY(-2.8rem);
+}
+
+.form-input .remember-forget
+{   
+    color: #fff;
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.form-input .remember-forget a
+{
+    color: #fff;
+    text-decoration: none;
+}
+.form-input .remember-forget label
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.form-input .remember-forget #remember
+{
+    width: 2rem;
+    height: 2rem;
+}
+
+.form-input .btn-login
+{   
+    position: relative;
+    width: 18rem;
+    height: 3.8rem;
+    border-radius: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    border: none;
+    outline: none;
+    margin-bottom: 3rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.form-input .register
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.4rem;
+}
+.form-input .register a
+{
+    color: #fff;
+}
+
+.wraper .register-page
+{
+    position: absolute;
+    transform: translate(50rem, 3rem);
+}
+
+.wraper.activeSlide .register-page
+{
+    transform: translate(0, 3rem);
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Parallax scrolling</title>
+</head>
+
+<body>
+    <div class="header">
+        <a href="#" class="logo">Logo</a>
+        <ul class="navigation">
+            <li class="item active"><a href="#">Home</a></li>
+            <li class="item"><a href="#">About</a></li>
+            <li class="item"><a href="#">Course</a></li>
+            <li class="item"><a href="#">Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="parallax">
+        <h2 id="text_parallax">Parallax scrolling</h2>
+        <img src="./image/monutain_01.png" alt="" id="m1">
+        <img src="./image/trees_02.png" alt="" id="t2">
+        <img src="image/monutain_02.png" alt="" id="m2">
+        <img src="./image/trees_01.png" alt="" id="t1">
+        <img src="./image/man.png" alt="" id="man">
+        <img src="./image/plants.png" alt="" id="plants">
+        <img src="./image/sun.png" alt="" id="sun">
+
+    </div>
+
+    <div class="content">
+        <h2>Parallax Scrolling Website</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid deserunt culpa non officia ea repellat
+            eligendi dolore fugit est necessitatibus, impedit beatae itaque quasi corporis distinctio accusamus
+            excepturi laborum. Ratione recusandae at deserunt. Obcaecati tempore eius illo alias illum vitae earum nemo
+            dolor commodi officia enim mollitia quasi exercitationem quis neque harum autem iure reprehenderit, officiis
+            aliquid, provident ducimus incidunt? Ex ratione blanditiis voluptas, dignissimos sapiente laboriosam at
+            aliquam id vero veritatis quisquam, quos expedita. Quaerat molestias inventore cumque soluta quas veritatis
+            labore porro eaque! Suscipit ea velit ut dolorem dolorum esse, sed qui libero perspiciatis tempora, dicta
+            dolore, fuga ad odit! Laudantium sit quas rem, culpa debitis vitae, facilis praesentium veritatis saepe
+            <br>
+            eaque laborum error! Fugiat ipsa neque sequi enim culpa molestias est minus, incidunt eos, quas quos
+            doloremque, autem aperiam ullam! Asperiores voluptate esse optio commodi saepe tempore ullam sunt
+            consequatur nemo beatae, quis rem qui fugiat provident nisi sed hic ex aperiam atque vel aut nulla. Illo
+            maxime, eaque sed dicta cupiditate veniam dolorum ipsam! Accusantium recusandae quis nostrum fugit officiis!
+            Nesciunt repellendus optio doloremque magnam minima nihil veritatis, laboriosam temporibus perspiciatis
+            impedit qui quidem dolorem repellat dignissimos fugit. Neque porro placeat numquam iste harum, autem,
+            expedita cum voluptatibus fugiat maxime aspernatur. Adipisci, rerum tenetur. Aperiam vero ad dolorem
+            excepturi incidunt velit debitis esse rerum, porro eligendi assumenda doloribus. Harum itaque at ipsam non
+            veritatis id repellendus, eaque ipsa reprehenderit! Debitis beatae, laboriosam dicta tenetur hic delectus
+            earum fugiat blanditiis vel non rem impedit inventore id sequi neque perspiciatis? Fugit, laborum quasi
+            corrupti odit cumque consequatur recusandae ullam quia quam incidunt voluptate temporibus laudantium
+            accusantium.
+            <br>
+            Soluta placeat eum consequatur quibusdam nisi quia quod, aliquid sint a dolorum ad qui! Quasi
+            optio tenetur quae magni nesciunt, id quibusdam modi natus saepe suscipit qui nam alias, at dolor aut
+            ratione obcaecati praesentium aliquid eius. Corrupti animi doloribus iusto! Qui consectetur tenetur
+            perferendis nobis necessitatibus ipsa culpa laudantium omnis porro mollitia! Veniam at optio animi magni
+            perspiciatis iste repellat quia eos voluptas perferendis incidunt voluptatem eligendi consequuntur est
+            cumque tempore, reiciendis quod culpa soluta recusandae officiis. Earum voluptates commodi est repudiandae
+            dicta natus optio debitis voluptate recusandae, ea ut eius sunt, quam veritatis nulla sapiente! Deserunt
+            iure voluptatum eius eos aspernatur vero aliquam deleniti dignissimos unde reiciendis fugit vel asperiores
+            impedit, quo architecto ut pariatur totam dolores voluptas obcaecati quasi animi sit ullam! Reiciendis
+            deserunt asperiores expedita, iure optio odio!
+        </p>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+
+    <script>
+        gsap.from("#m1", {
+            scrollTrigger: {
+                scrub: true
+            },
+            y: 100,
+        })
+        gsap.from("#m2", {
+            scrollTrigger: {
+                scrub: true
+            },
+            y: 50,
+        })
+        gsap.from("#t2", {
+            scrollTrigger: {
+                scrub: true
+            },
+            x: -50,
+        })
+        gsap.from("#t1", {
+            scrollTrigger: {
+                scrub: true
+            },
+            x: 50,
+        })
+
+        gsap.from("#man", {
+            scrollTrigger: {
+                scrub: true
+            },
+            x: -250,
+        })
+        gsap.from("#plants", {
+            scrollTrigger: {
+                scrub: true
+            },
+            x: -50,
+        })
+        gsap.from("#sun", {
+            scrollTrigger: {
+                scrub: true
+            },
+            x: 400,
+            y: 50,
+
+        })
+
+
+    </script>
+</body>
+
+</html>
